@@ -365,7 +365,7 @@ namespace gleaf::ui
                         bool ignorev = (sopt == 0);
                         u64 fsize = fs::GetFileSize(fullitm);
                         u64 rsize = fs::GetFreeSpaceForPartition(static_cast<fs::Partition>(dst));
-                        if(rsize < (fsize * 2))
+                        if(rsize < fsize)
                         {
                             HandleResult(err::Make(err::ErrorDescription::NotEnoughSize), set::GetDictionaryEntry(251));
                             return;
